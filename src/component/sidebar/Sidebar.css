@@ -1,0 +1,51 @@
+.sidebar{
+    flex: 2;
+}
+.sidebarwrap{
+    width: 100%;
+    height: calc(100vh - 70px);
+    /* background-color: blueviolet; */
+    background-color: #fff;
+}
+.formbox{
+    width: 80%;
+    display: block;
+    margin:  auto;
+    padding: 50px 5px;
+
+}
+
+.form-control{
+    border: none;
+    border-bottom: 2px solid grey;
+    border-radius: 0;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+.userbox{
+    width: 100%;
+    height: 480px;
+    overflow-y: scroll;
+}
+.userboxwrap{
+    display: flex;
+    justify-content: center;
+    padding: 10px 5px;
+    cursor: pointer;
+}
+.userboxwrap:hover{
+background-color: rgb(241, 241, 241);
+}
+.userimg{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.username{
+   
+    font-size: 20px;
+    color: gray;
+    font-weight: 600;
+}
