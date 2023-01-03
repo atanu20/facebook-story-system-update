@@ -9,10 +9,7 @@ const Post = ({ id, postimg, userproimg, user, savepostid }) => {
       postid: id,
       savepostid: savepostid,
     };
-    const res = await axios.post(
-      `https://facebook-story-production.up.railway.app/views`,
-      data
-    );
+    const res = await axios.post(`https://story-node.onrender.com/views`, data);
     // console.log(res.data)
     history.push(`/story/${id}`);
   };

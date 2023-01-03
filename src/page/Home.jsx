@@ -22,7 +22,7 @@ const Home = () => {
 
   const checkAuth = () => {
     axios
-      .get('https://facebook-story-production.up.railway.app/isAuth', {
+      .get('https://story-node.onrender.com/isAuth', {
         headers: {
           'x-access-token': localStorage.getItem('Storytoken'),
         },
@@ -46,9 +46,7 @@ const Home = () => {
   }, []);
 
   const getData = async () => {
-    const res = await axios.get(
-      'https://facebook-story-production.up.railway.app/allstory'
-    );
+    const res = await axios.get('https://story-node.onrender.com/allstory');
     setStoryData(
       res.data.sort((p1, p2) => {
         return new Date(p2.date) - new Date(p1.date);

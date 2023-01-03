@@ -13,7 +13,7 @@ const Login = () => {
 
   const checkAuth = () => {
     axios
-      .get('https://facebook-story-production.up.railway.app/isAuth', {
+      .get('https://story-node.onrender.com/isAuth', {
         headers: {
           'x-access-token': localStorage.getItem('Storytoken'),
         },
@@ -44,10 +44,7 @@ const Login = () => {
       password,
     };
 
-    const res = await axios.post(
-      'https://facebook-story-production.up.railway.app/login',
-      data
-    );
+    const res = await axios.post('https://story-node.onrender.com/login', data);
     // console.log(res.data)
     if (res.data.msg) {
       setStatus(true);

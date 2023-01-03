@@ -8,7 +8,7 @@ const Rightbar = ({ id }) => {
   const [storyData, setStoryData] = useState([]);
   const getData = async () => {
     const res = await axios.get(
-      `https://facebook-story-production.up.railway.app/storybyid/${id}`
+      `https://story-node.onrender.com/storybyid/${id}`
     );
     setStoryData(res.data);
     // console.log(res.data)

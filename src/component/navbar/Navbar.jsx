@@ -26,7 +26,7 @@ const Navbar = ({ home }) => {
 
   const checkUpload = async () => {
     const res = await axios.get(
-      `https://facebook-story-production.up.railway.app/checkupload/${StoryUserId}`
+      `https://story-node.onrender.com/checkupload/${StoryUserId}`
     );
     // console.log(res.data)
     if (res.data.submit) {
@@ -37,7 +37,7 @@ const Navbar = ({ home }) => {
   };
   const mypro = async () => {
     const res = await axios.get(
-      `https://facebook-story-production.up.railway.app/myprofile/${StoryUserId}`
+      `https://story-node.onrender.com/myprofile/${StoryUserId}`
     );
     setMyPro(res.data);
   };
@@ -86,13 +86,10 @@ const Navbar = ({ home }) => {
             const oneimg = response.data.secure_url;
 
             axios
-              .post(
-                'https://facebook-story-production.up.railway.app/uploadpost',
-                {
-                  user_id: StoryUserId,
-                  postimg: oneimg,
-                }
-              )
+              .post('https://story-node.onrender.com/uploadpost', {
+                user_id: StoryUserId,
+                postimg: oneimg,
+              })
               .then((res) => {
                 //  console.log(res.data)
                 if (res.data.submit) {
@@ -118,7 +115,7 @@ const Navbar = ({ home }) => {
     // let formData=new FormData();
     // formData.append("postimg",postimg)
     // formData.append("user_id",StoryUserId)
-    // let res=await axios.post("https://facebook-story-production.up.railway.app/uploadpost",formData);
+    // let res=await axios.post("https://story-node.onrender.com/uploadpost",formData);
     // // console.log(res.data)
     // if(res.data.submit)
     // {

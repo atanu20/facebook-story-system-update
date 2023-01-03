@@ -16,7 +16,7 @@ const Register = () => {
 
   const checkAuth = () => {
     axios
-      .get('https://facebook-story-production.up.railway.app/isAuth', {
+      .get('https://story-node.onrender.com/isAuth', {
         headers: {
           'x-access-token': localStorage.getItem('Storytoken'),
         },
@@ -63,15 +63,12 @@ const Register = () => {
             const oneimg = response.data.secure_url;
 
             axios
-              .post(
-                'https://facebook-story-production.up.railway.app/register',
-                {
-                  name: name,
-                  email: email,
-                  password: password,
-                  postimg: oneimg,
-                }
-              )
+              .post('https://story-node.onrender.com/register', {
+                name: name,
+                email: email,
+                password: password,
+                postimg: oneimg,
+              })
               .then((res) => {
                 //  console.log(respo.data)
                 if (res.data.msg) {
@@ -88,7 +85,7 @@ const Register = () => {
       }
     }
 
-    // const res=await axios.post('https://facebook-story-production.up.railway.app/register',formData)
+    // const res=await axios.post('https://story-node.onrender.com/register',formData)
     // // console.log(res.data)
     // if(res.data.msg)
     // {

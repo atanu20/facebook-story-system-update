@@ -10,17 +10,13 @@ const Sidebar = ({ ppid }) => {
   const [onestoryData, setOneStoryData] = useState([]);
   const StoryUserId = localStorage.getItem('StoryUserId');
   const getMy = async () => {
-    const res = await axios.get(
-      'https://facebook-story-production.up.railway.app/allstory'
-    );
+    const res = await axios.get('https://story-node.onrender.com/allstory');
 
     const oned = res.data.filter((val) => val.user_id === StoryUserId);
     setOneStoryData(oned);
   };
   const getData = async () => {
-    const res = await axios.get(
-      'https://facebook-story-production.up.railway.app/allstory'
-    );
+    const res = await axios.get('https://story-node.onrender.com/allstory');
     const data = res.data.filter((val) => val.user_id !== StoryUserId);
     setStoryData(
       data.sort((p1, p2) => {
@@ -38,7 +34,7 @@ const Sidebar = ({ ppid }) => {
     // console.log(id)
     if (ppid !== id) {
       const res = await axios.post(
-        `https://facebook-story-production.up.railway.app/views`,
+        `https://story-node.onrender.com/views`,
         data
       );
       // console.log(res.data)
@@ -74,7 +70,7 @@ const Sidebar = ({ ppid }) => {
           <div className="userbox">
             {/* {
                         onestoryData && <div className="userboxwrap" onClick={()=>history.push(`/story/${onestoryData[0]._id}`)}>
-                        <img src={onestoryData[0].userproimg ? `https://facebook-story-production.up.railway.app/images/profile/${onestoryData[0].userproimg}` : `../image/pro.png`} alt="" className="userimg" />
+                        <img src={onestoryData[0].userproimg ? `https://story-node.onrender.com/images/profile/${onestoryData[0].userproimg}` : `../image/pro.png`} alt="" className="userimg" />
                         <span className="username pl-3 pt-1">{onestoryData[0].user}</span>
                     </div>
                     } */}

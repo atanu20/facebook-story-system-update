@@ -13,7 +13,7 @@ const Story = () => {
 
   const checkAuth = () => {
     axios
-      .get('https://facebook-story-production.up.railway.app/isAuth', {
+      .get('https://story-node.onrender.com/isAuth', {
         headers: {
           'x-access-token': localStorage.getItem('Storytoken'),
         },

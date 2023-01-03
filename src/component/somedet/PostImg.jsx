@@ -26,7 +26,7 @@ const PostImg = ({ postimg, savepostid, likes, views, pid, getData }) => {
       savepostid: savepostid,
     };
     const res = await axios.post(
-      'https://facebook-story-production.up.railway.app/checklike',
+      'https://story-node.onrender.com/checklike',
       data
     );
     if (res.data.submit) {
@@ -41,10 +41,7 @@ const PostImg = ({ postimg, savepostid, likes, views, pid, getData }) => {
       postid: pid,
       uid: StoryUserId,
     };
-    const res = await axios.post(
-      'https://facebook-story-production.up.railway.app/like',
-      data
-    );
+    const res = await axios.post('https://story-node.onrender.com/like', data);
     Likeusers();
     getData();
     checkLike();
@@ -55,7 +52,7 @@ const PostImg = ({ postimg, savepostid, likes, views, pid, getData }) => {
       postid: pid,
     };
     const res = await axios.post(
-      'https://facebook-story-production.up.railway.app/likeusers',
+      'https://story-node.onrender.com/likeusers',
       data
     );
     getData();
